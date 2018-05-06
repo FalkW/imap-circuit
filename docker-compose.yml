@@ -1,0 +1,8 @@
+version: "3"
+services:
+  node:
+    image: "node:8"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/usr/src/app

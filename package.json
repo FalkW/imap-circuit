@@ -1,0 +1,31 @@
+{
+  "name": "imap-circuit",
+  "version": "1.0.0",
+  "description": "Pushing mail from IMAP Server into a Circuit Conversation",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.5",
+    "circuit-sdk": "^1.2.1801",
+    "eslint": "^4.9.0",
+    "imap-simple": "^4.0.0",
+    "remove-markdown": "^0.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FalkW/imap-circuit.git"
+  },
+  "keywords": [
+    "Unify",
+    "Circuit",
+    "Bot"
+  ],
+  "author": "Falk Weber",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/FalkW/imap-circuit/issues"
+  },
+  "homepage": "https://github.com/FalkW/imap-circuit#readme"
+}
