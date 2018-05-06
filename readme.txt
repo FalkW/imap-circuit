@@ -1,0 +1,1 @@
+If all mails should be posted into the same conversation please add a conversationID in the config.json file otherwise add the parts of the email-address before and after the  the conversationID if it can be exctracted from the target address and it  will be extracted automatically.
