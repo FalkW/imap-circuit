@@ -1,7 +1,5 @@
 #application config
 config.json
-client_secret.json
-credentials.json
 
 #Visual Studio Code
 .vscode/

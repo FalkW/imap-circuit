@@ -55,8 +55,8 @@ var fCircuit = function () {
         return new Promise(function (resolve, reject) {
             logger.info('[CIRCUIT]: createClient');
             client = new Circuit.Client({
-                client_id: config.client_id,
-                client_secret: config.client_secret,
+                client_id: config.circuit_client_id,
+                client_secret: config.circuit_client_secret,
                 domain: config.domain,
                 autoRenewToken: true
             });
