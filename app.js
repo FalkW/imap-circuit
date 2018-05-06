@@ -238,23 +238,26 @@ function run() {
 
                 // If conversatioID is not defined in config file parse it from target address
                 if (!config.circuit_convId) {
-                    logger.info(`[IMAP]: ConversationID is not defined in config file determine it manually`);
+                    logger.debug(`[IMAP]: ConversationID is not defined in config file determine it manually from recipients: ${recipients[i]}`);
                     circuit_conversationID = `${recipients[i]}`;
-                    circuit_conversationID = circuit_conversationID.replace(config.before_convId,'');
-                    circuit_conversationID = circuit_conversationID.replace(config.after_convId,'');   
+
+                    circuit_conversationID = circuit_conversationID.substring(circuit_conversationID.lastIndexOf(config.before_convId)+config.before_convId.length,circuit_conversationID.lastIndexOf(config.after_convId));
+                    logger.debug(`[IMAP]: ConvID after cleanup: ${circuit_conversationID}`);
                 }
 
                 circuit_subject = `${subjects[i]}`;
 
                 // Make the sender name look a little nicer
                 circuit_sender = `${senders[i]}`;
+                circuit_sender = circuit_sender.replace(/['"]+/g, '');
                 circuit_sender = circuit_sender.replace('>','');
                 circuit_sender = circuit_sender.replace('<','- ');
 
                 circuit_text = `${text[i]}`;
+                circuit_text = removeMd(circuit_text);
 
                 // Compose message
-                var circuit_message = `${circuit_text} \n\n${circuit_sender}`;
+                var circuit_message = `${circuit_text}\n\n${circuit_sender}`;
 
                 logger.debug(`MESSAGE #${i}: CONV: ${circuit_conversationID}, SUBJECTS: ${circuit_subject}, MESSAGE: ${circuit_message}`);
 
