@@ -1,0 +1,14 @@
+{
+  "circuit_client_id"          : "",
+  "circuit_client_secret"      : "",
+  "domain"                     : "eu.yourcircuit.com",
+  "sdkLogLevel"                : "debug",
+  "circuit_convId"             : "",
+  "before_convId"              : "samplemailaddress+",
+  "after_convId"               : "@gmail.com",
+  "imap_user"                  : "samplemailaddress@gmail.com",
+  "imap_password"              : "",
+  "imap_host"                  : "imap.gmail.com",
+  "imap_port"                  : "993",
+  "imap_tls"                   : "true"
+ }
